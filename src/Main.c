@@ -2,10 +2,14 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "Headers/File.h"
+
 const char* PROJECT_NAME    = "Tasq";
 const char* PROJECT_VERSION = "0.1";
 const char* PROJECT_AUTHOR  = "Ferdinand Procházka";
 const char* PROJECT_LICENSE = "GNU GPLv3";
+
+const unsigned int TASK_COUNT_LIMIT = 32;
 
 void printProgramInfo();
 void printCommands();
@@ -15,10 +19,7 @@ int main(int argc, char** argv)
   if (argc == 1)
   {
     printf("Tasks\n\n");
-
-    printf("1) Task\n");
-    printf("2) Task\n");
-    printf("3) Task\n");
+    printTasks();
 
     return EXIT_SUCCESS;
   }
